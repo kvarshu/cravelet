@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Collection</title>
+  <!-- Bubblegum Sans font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Make sure Bubblegum Sans applies to body and headings */
+    body, h1, h2, h3, p, input, textarea, button {
+      font-family: 'Bubblegum Sans', cursive;
+    }
+    /* Website name style */
+    #site-name {
+      text-align: center;
+      margin: 40px 0 20px 0;
+      font-size: 3rem;
+      color: rgb(226, 204, 5);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body class="landing-page">
+  <div id="main-wrapper">
+
+    <!-- Website Name -->
+    <header>
+      
+    </header>
+
+    <div id="login-container">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+    </div>
+
+    <div id="register-container" style="display:none;">
+      <h2>Register</h2>
+      <input type="text" id="new-username" placeholder="Username" />
+      <input type="password" id="new-password" placeholder="Password" />
+      <button onclick="register()">Register</button>
+    </div>
+
+    <div id="recipe-container" style="display:none;">
+      <h1>Personal Recipe Collection</h1>
+      <button onclick="logout()">Logout</button>
+      <div>
+        <input type="text" id="recipe-name" placeholder="Recipe Name" />
+        <textarea id="recipe-details" placeholder="Recipe Details"></textarea>
+        <button onclick="addRecipe()">Add Recipe</button>
+      </div>
+      <div id="recipe-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

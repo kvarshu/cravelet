@@ -1,0 +1,1112 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Molle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cravelet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            color: white;
+            background-color: black;
+            transition: background-color 0.5s ease-in-out;
+            background-attachment: fixed;
+            overflow-y: auto;
+            margin: 0;
+            font-family: sans-serif;
+            scroll-behavior: smooth
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1px 0.5px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .navbar img {
+        width: 300px; /* or try 180px / 200px depending on your layout */
+        height: auto; /* maintain aspect ratio */
+        }
+
+        .navbar .center-nav a {
+            color: white;
+            margin-left: 15px;
+            font-size: 1.3rem;
+            transition: all 0.5s ease;
+        }
+        .navbar .center-nav a:hover {
+            color: rgb(255, 140, 0);
+            text-shadow: 0px 0px 30px rgb(255, 140, 0);
+        }
+        header {
+            height: 100vh;
+            position: relative;
+        }
+        header {
+    margin-bottom: 300px; /* Increase as needed */
+}
+
+        .social a {
+            color: white;
+            margin-left: 15px;
+            font-size: 1.5rem;
+            transition: all 0.5s ease;
+        }
+        .social a:hover {
+            color: rgb(255, 140, 0);
+            text-shadow: 0px 0px 30px rgb(255, 140, 0);
+        }
+        .text {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    left: auto;
+    width: 35%;
+    text-align: right;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+        .text h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .text p {
+  width: 90%;
+  max-width: 600px;
+  text-align: right;
+  margin-left: auto;
+  margin-right: 5%;
+  font-size: 1.2rem;
+}
+
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+    padding: 50px;           /* optional padding */
+    text-align: center;
+    background-color: black;
+    background-image: url('bg (4).jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+
+
+        .operation {
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 10px auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            transition: transform 0.3s;
+        }
+        .operation:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            padding: 10px 20px;
+            color: white;
+            background-color: rgb(255, 140, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #recipes {
+    position: relative;
+    padding-top: 20px; /* Adjust as needed */
+    overflow: hidden;
+    margin-bottom: 300px;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgb(255, 140, 0);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+        .btn {
+            color: white;
+            border: 2px solid white;
+            padding: 10px 30px;
+            margin-right: 10px;
+            border-radius: 6px;
+            transition: all 0.5s ease;
+        }
+        .btn:hover {
+            background-color: rgb(255, 140, 0);
+            box-shadow: 0 0 10px 2px rgb(255, 140, 0);
+        }
+        #stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            animation: twinkle 2s infinite;
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .burger-toggle img{
+            position: absolute;
+            width: 38%;
+            height: 74%;
+            right: 47%;
+            top: 7rem;
+            filter: drop-shadow(63px 90px 393px);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .burger,
+        .burger-toggle{
+            display: flex;
+        }
+        header {
+    position: relative; /* Make header a positioning context */
+}
+
+.burger-container {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+        .burger-container img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border: 2px solid white;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .burger-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        .burger-toggle img{
+    display: none;
+  }
+
+  .burger-toggle img.active{
+    display: block;
+  }
+
+  #feedbackBox {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000000;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  display: none;
+  font-size: 1rem;
+  z-index: 9999;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.7);
+  border: 2px solid rgb(255, 140, 0);
+}
+
+.animated-foods {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.food {
+  position: absolute;
+  width: 200px;  /* Increased from 80px */
+  height: 200px; /* Optional: add for proportional scaling */
+  animation: bounce 3s infinite ease-in-out;
+}
+
+.garlic {
+  left: 10%;
+  top: 35%;
+  animation-delay: 0s;
+}
+
+.tomato {
+  left: 47%;
+  top: 30%;
+  animation-delay: 0.5s;
+}
+
+.potato {
+  left: 80%;
+  top: 20%;
+  animation-delay: 1s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* Containers for left, center, right */
+.side-left, .side-right {
+  position: relative;
+  width: 0vw;  /* Adjust width as needed */
+  height: 100vh; /* Full height */
+  float: left;
+  background: transparent; /* Already dark wood background on body or main container */
+  overflow: visible;
+}
+
+.side-left {
+  background-position: left center;
+}
+
+.side-right {
+  float: right;
+  background-position: right center;
+}
+
+.main-content {
+  width: 60vw;  /* Center part */
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* Decorative images inside the sides */
+.decorative-image {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+}
+
+.decorative-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes slideInOut {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+.slide {
+  animation: slideInOut 3s ease-in-out infinite;
+}
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  /* Keyframes for fadeInUp and slideInFromBottom (if not already defined) */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+    
+
+  @keyframes rotateIn {
+    from {
+      transform: rotate3d(0,0,1,-200deg)
+      opacity: 0;
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  #main-navbar {
+  transition: transform 0.5s ease-in-out;
+}
+
+.hide-navbar {
+  transform: translateY(-100%);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceEffect {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.text h1 {
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.text p {
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+
+.burger-toggle img.active {
+  animation: bounceEffect 2s infinite ease-in-out;
+}
+
+input[type="text"], textarea {
+  background: rgba(255, 255, 255, 0.1); /* translucent white */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 12px 15px;
+  color: white;
+  font-size: 1rem;
+  backdrop-filter: blur(8px); /* key for glass effect */
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+  outline: none;
+}
+
+input[type="text"]:focus, textarea:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 140, 0, 0.8); /* accent color on focus */
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.7);
+}
+
+.about-title,
+.about-subtitle,
+.box-text {
+  font-family: 'Bubblegum Sans', cursive;
+}
+
+.about-us-section {
+  min-height: 100vh;
+  background: url('your-custom-bg.jpg') center/cover no-repeat;
+  padding: 80px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.about-title {
+  font-size: 3rem;
+  color: #ffcc70;
+  animation: slide-in-left 1s ease-out forwards;
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #ffffffcc;
+  animation: slide-in-right 1s ease-out forwards;
+}
+
+.about-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.about-box {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 204, 112, 0.4);
+  backdrop-filter: blur(10px);
+  animation: glow-bounce 3s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+
+.about-box:hover {
+  transform: scale(1.05);
+}
+
+.about-box img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Apply Molle to About Us Headings */
+.about-heading {
+  font-family: '', cursive;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+/* Apply Chewy to About Us body text */
+.about-text {
+  font-family: 'Chewy', cursive;
+  font-size: 1.1rem;
+  color: #f3f3f3;
+  line-height: 1.8;
+}
+
+.box-text {
+  font-size: 1rem;
+  color: #ffffffcc;
+}
+
+.delay1 {
+  animation-delay: 0s;
+}
+.delay2 {
+  animation-delay: 0.5s;
+}
+.delay3 {
+  animation-delay: 1s;
+}
+
+/* Animations */
+@keyframes glow-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 20px rgba(255, 204, 112, 0.4);
+  }
+  50% {
+    transform: translateY(-15px);
+    box-shadow: 0 0 40px rgba(255, 204, 112, 0.6);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.decorative-image.small img {
+  width: 250px;
+  height: auto;
+}
+
+.decorative-image.medium img {
+  width: 150px;
+  height: auto;
+}
+
+.decorative-image.large img {
+  width: 200px;
+  height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 0.5px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section, header {
+  scroll-margin-top: 80px; /* Adjust based on navbar height */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="stars"></div>
+        <div class="navbar" id="main-navbar">
+            <img src="logome.png" alt="Logo">
+            <div class="center-nav">
+                <a href="#">Home</a>
+                <a href="#">Main</a>
+                <a href="#">About</a>
+            </div>
+            <div class="social">
+                <a href="#"><i class="fa-solid fa-house-user"></i></a>
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#"><i class="fa-solid fa-mobile"></i></a>
+            </div>
+        </div>
+
+        <div id="main">
+            <div id="login-container">
+              ...
+            </div>
+          
+            <div id="register-container" style="display:none;">
+              ...
+            </div>
+          </div>
+          
+          <!-- Recipe Collection Section (About or your choice) -->
+          <div id="about" class="about-us-section" style="display:none;">
+            <div id="recipe-container">
+              ...
+            </div>
+          </div>
+        <div class="text">
+            <h1>YOUR RECIPE ,YOUR LEGACY</h1>
+            <p>"A cozy space to save, organize, and cherish your personal recipes — all in one beautiful, easy-to-use place. Whether it’s grandma’s secret pie or your midnight pasta fix, keep every flavor close to home."</p>
+    
+            <a href="#" class="btn">View More</a>
+        </div>
+
+    </header>
+    <!-- Decorative Animated Images on LHS & RHS -->
+    
+    <div class="burger-container">
+        <img src="Flying Burger PNG Image - 2084x2084.png" alt="Burger 1">
+        <img src="smoke.png" alt="Burger 2">
+        <img src="steak.png" alt="Burger 3">
+        <img src="fried rice.png" alt="Burger 4">
+        <img src="p5.png" alt="Burger 5">
+    </div>
+    <div class="burger-toggle">
+        <img src="Flying Burger PNG Image - 2084x2084.png" alt="">
+    </div>
+
+    <section id="recipes">
+        
+        <button class="scroll-btn" onclick="scrollToRecipes()">↓ Manage Recipes</button>
+        <h2>Recipe Collection Management</h2>
+      
+        <div style="margin-bottom: 20px;">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search recipes..."
+              style="padding: 10px; border-radius: 6px; width: 60%; max-width: 300px;"
+            />
+          </div>
+          
+      <!-- Left side -->
+    <div class="decorative-image bounce small" style="top: 20%; left: 20px;">
+        <img src="dec (1).png" alt="Decor" />
+      </div>
+
+      <div class="decorative-image slide medium" style="top: 50%; left: 300px;">
+        <img src="dec (6).png" alt="Decor" />
+      </div>
+      
+      <!-- Right side -->
+      <div class="decorative-image bounce large" style="top: 0.5%; right: 90px;">
+        <img src="mush.png" alt="Decor" />
+      </div>
+      
+      <div class="decorative-image slide small" style="top: 25%; right: 500px;">
+        <img src="chil.png" alt="Decor" />
+      </div>
+      
+      <!-- Decorative Object Left (Bounce) -->
+<div class="decorative-image bounce large" style="left: 2%; top: 40%;">
+    <img src="dec (3).png" alt="Bouncing Left Object">
+  </div>
+  
+  <!-- Decorative Object Right (Slide In/Out) -->
+  <div class="decorative-image slide large" style="right: 20%; top: 50%;">
+    <img src="dec (2).png" alt="Sliding Right Object">
+  </div>
+  
+          
+        <div id="recipeListContainer" style="padding: 20px; text-align: center;">
+          <h3>Add a New Recipe</h3>
+          <input type="text" id="recipeName" placeholder="   Recipe Name" style="padding: 11px; border-radius: 6px; width: 60%; max-width: 300px;"><br><br>
+          <textarea id="recipeDetails" placeholder="    Recipe Details" rows="5" style="padding: 10px; border-radius: 6px; width: 100%; max-width: 900px;"></textarea><br><br>
+          <button onclick="insertRecipe()" style="margin-left: 10px;">Add Recipe</button>
+      
+          <div id="recipeList" style="margin-top: 30px;"></div>
+        </div>
+        <div class="animated-foods">
+            <img src="garlic.png" class="food garlic" alt="Garlic">
+            <img src="tomato.png" class="food tomato" alt="Tomato">
+            <img src="potato.png" class="food potato" alt="Potato">
+          </div>
+      </section>
+
+      <section class="about-us-section" id="about">
+        <div class="about-header">
+          <h2 class="about-title">About Cravelet</h2>
+          <p class="about-subtitle">Where recipes come alive with flavor and flair!</p>
+        </div>
+      
+        <div class="about-boxes">
+          <div class="about-box bounce delay1">
+            <img src="team.jpeg" alt="Our Mission" />
+            <p class="box-text fade-in">Our mission is to empower food lovers with a seamless recipe management experience. We blend smart design with intuitive tools so that anyone—whether a seasoned chef or a curious beginner—can cook confidently and share delicious moments.</p>
+          </div>
+          <div class="about-box bounce delay2">
+            <img src="mission.jpeg" alt="Our Team" />
+            <p class="box-text slide-up">We're a diverse group of foodies, designers, and developers passionate about good food and great technology. Fueled by late-night snacks and caffeine, we’re committed to building features that truly serve and delight our users.</p>
+          </div>
+          <div class="about-box bounce delay3">
+            <img src="vision.jpeg" alt="Our Vision" />
+            <p class="box-text zoom-in">At Cravelet, we envision a world where cooking is joyful, stress-free, and deeply connected. We strive to build a digital kitchen companion that inspires creativity, celebrates culture, and brings people together—one recipe at a time.
+
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      <div id="feedbackBox"></div>
+
+      
+    <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerImages = document.querySelectorAll(".burger-container img");
+    const toggleImage = document.querySelector(".burger-toggle img");
+
+    if (burgerImages.length > 0) {
+        toggleImage.src = burgerImages[0].src;
+        toggleImage.classList.add("active");
+    }
+
+    burgerImages.forEach((img) => {
+        img.addEventListener("click", () => {
+            toggleImage.src = img.src; // Update the displayed image
+            toggleImage.classList.add("active"); // Ensure visibility
+            loadRecipes();
+        });
+    });
+});
+
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+        
+            for (let i = 300; i < 500; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.position = 'absolute';
+                star.style.width = '2px';
+                star.style.height = '2px';
+                star.style.backgroundColor = '#fff';
+                star.style.boxShadow = '0 0 10px 2px rgba(255, 255, 255, 0.5)';
+                star.style.left = `${Math.random() * windowWidth}px`;
+                star.style.top = `${Math.random() * windowHeight}px`;
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        window.addEventListener('load', () => {
+            if (document.getElementById('stars')) {
+                createStars();
+            }
+        });
+
+        function scrollToRecipes() {
+            document.getElementById("recipes").scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Filter recipes based on search input and re-render the list
+function filterRecipes() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+
+  const filtered = recipes.filter(recipe =>
+    recipe.name.toLowerCase().includes(query) ||
+    recipe.details.toLowerCase().includes(query)
+  );
+
+  renderFilteredRecipes(filtered);
+}
+
+// Helper function to render filtered recipes list
+function renderFilteredRecipes(filteredRecipes) {
+  const list = document.getElementById('recipeList');
+  list.innerHTML = '';
+
+  filteredRecipes.forEach(recipe => {
+    const div = document.createElement('div');
+    div.className = 'operation';
+    div.style.textAlign = 'left';
+
+    const title = document.createElement('div');
+    title.innerText = recipe.name;
+    title.style.fontWeight = 'bold';
+    title.style.fontSize = '1.2rem';
+
+    const details = document.createElement('div');
+    details.innerText = recipe.details;
+    details.style.margin = '10px 0';
+    details.id = `details-${recipe._id}`;
+
+    const editBtn = document.createElement('button');
+    editBtn.innerText = 'Edit';
+    editBtn.style.marginRight = '10px';
+    editBtn.onclick = () => editRecipe(recipe._id);
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = 'Delete';
+    deleteBtn.onclick = () => deleteRecipe(recipe._id);
+
+    div.appendChild(title);
+    div.appendChild(details);
+    div.appendChild(editBtn);
+    div.appendChild(deleteBtn);
+
+    list.appendChild(div);
+  });
+}
+
+let recipes = [];
+
+async function insertRecipe() {
+    const nameInput = document.getElementById('recipeName');
+    const detailsInput = document.getElementById('recipeDetails');
+    const name = nameInput.value.trim();
+    const details = detailsInput.value.trim();
+
+    if (!name || !details) {
+    nameInput.style.border = '2px solid red';
+    detailsInput.style.border = '2px solid red';
+    showFeedback("Please enter both recipe name and details.");
+    return;
+}
+
+
+    try {
+        const res = await fetch('http://localhost:5000/api/recipes', {  // update URL if different
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, details })
+        });
+
+        if (!res.ok) throw new Error('Failed to add recipe');
+
+        nameInput.value = '';
+        detailsInput.value = '';
+
+        // Reload the list after adding
+        await loadRecipes();
+
+        showFeedback('Recipe added!');
+    } catch (error) {
+        console.error(error);
+        showFeedback('Error adding recipe');
+    }
+}
+
+async function loadRecipes() {
+    try {
+        const res = await fetch('http://localhost:5000/api/recipes');
+        if (!res.ok) throw new Error('Failed to fetch recipes');
+        recipes = await res.json();  // <-- assign to global recipes
+
+        renderRecipes();  // <-- render with buttons now
+    } catch (error) {
+        console.error(error);
+        showFeedback('Error loading recipes');
+    }
+}
+
+
+function renderRecipes() {
+    const list = document.getElementById('recipeList');
+    list.innerHTML = '';
+
+    recipes.forEach(recipe => {
+        const div = document.createElement('div');
+        div.className = 'operation';
+        div.style.textAlign = 'left';
+
+        const title = document.createElement('div');
+        title.innerText = recipe.name;
+        title.style.fontWeight = 'bold';
+        title.style.fontSize = '1.2rem';
+
+        const details = document.createElement('div');
+        details.innerText = recipe.details;
+        details.style.margin = '10px 0';
+        details.id = `details-${recipe._id}`;
+
+        const editBtn = document.createElement('button');
+        editBtn.innerText = 'Edit';
+        editBtn.style.marginRight = '10px';
+        editBtn.onclick = () => editRecipe(recipe._id);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.innerText = 'Delete';
+        deleteBtn.onclick = () => deleteRecipe(recipe._id);
+
+        div.appendChild(title);
+        div.appendChild(details);
+        div.appendChild(editBtn);
+        div.appendChild(deleteBtn);
+
+        list.appendChild(div);
+    });
+}
+
+function editRecipe(id) {
+    const detailsDiv = document.getElementById(`details-${id}`);
+    const recipe = recipes.find(r => r._id === id);
+    if (!recipe) return;
+
+    // Replace details div with a textarea for editing
+    detailsDiv.innerHTML = '';
+    const textarea = document.createElement('textarea');
+    textarea.value = recipe.details;
+    textarea.style.width = '100%';
+    textarea.style.minHeight = '80px';
+    textarea.id = `edit-textarea-${id}`;
+
+    detailsDiv.appendChild(textarea);
+
+    // Change Edit button to Save button
+    const parentDiv = detailsDiv.parentElement;
+    const buttons = parentDiv.querySelectorAll('button');
+    buttons.forEach(btn => {
+        if (btn.innerText === 'Edit') {
+            btn.innerText = 'Save';
+            btn.onclick = () => saveEdit(id);
+        }
+    });
+}
+
+async function saveEdit(id) {
+    const textarea = document.getElementById(`edit-textarea-${id}`);
+    const newDetails = textarea.value.trim();
+
+    if (!newDetails) {
+        showFeedback("Details cannot be empty.");
+        return;
+    }
+
+    const recipe = recipes.find(r => r._id === id);
+    if (!recipe) return;
+
+    try {
+        const res = await fetch(`http://localhost:5000/api/recipes/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...recipe, details: newDetails }),
+        });
+
+        if (!res.ok) throw new Error('Failed to update recipe');
+
+        await loadRecipes();
+        showFeedback("Recipe updated!");
+    } catch (error) {
+        console.error(error);
+        showFeedback("Error updating recipe");
+    }
+}
+
+
+async function deleteRecipe(id) {
+    if (!confirm("Are you sure you want to delete this recipe?")) return;
+
+    try {
+        const res = await fetch(`http://localhost:5000/api/recipes/${id}`, {
+            method: 'DELETE',
+        });
+        if (!res.ok) throw new Error('Failed to delete recipe');
+
+        // Reload recipes after successful delete
+        await loadRecipes();
+        showFeedback("Recipe deleted!");
+    } catch (error) {
+        console.error(error);
+        showFeedback("Error deleting recipe");
+    }
+}
+
+  const navbar = document.getElementById('main-navbar');
+  const recipesSection = document.getElementById('recipes');
+
+  window.addEventListener('scroll', () => {
+    const sectionTop = recipesSection.getBoundingClientRect().top;
+
+    if (sectionTop <= 0) {
+      navbar.classList.add('hide-navbar');
+    } else {
+      navbar.classList.remove('hide-navbar');
+    }
+  });
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadRecipes();
+    const navbar = document.getElementById('main-navbar');
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+        const headerHeight = header.offsetHeight;
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > headerHeight * 0.75) {
+            navbar.classList.add('hide-navbar');
+        } else {
+            navbar.classList.remove('hide-navbar');
+        }
+    });
+});
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Collection — Login</title>
+  <!-- Bubblegum Sans font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="login-page">
+  <!-- now uses the login-page background override in your CSS -->
+  <header id="site-name"></header>
+
+  <div id="main-wrapper">
+    <div id="login-container">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+    </div>
+
+    <div id="register-container" style="display:none;">
+      <h2>Register</h2>
+      <input type="text" id="new-username" placeholder="Username" />
+      <input type="password" id="new-password" placeholder="Password" />
+      <button onclick="register()">Register</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
